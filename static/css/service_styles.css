@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: #d2d2d2;
+    scroll-behavior: smooth;
+}
+
+div, ul, nav, header, footer, a, li, label, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------- HEADER SECTION ------------- */
+.header__wrapper {
+    container-type: inline-size;
+    container-name: header;
+}
+
+header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) ,url(../images/services/bg_services_header.jpeg);
+    background-size: cover;
+    width: 100%;
+    min-height: 25vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ------------- HEADER QUERIES ------------- */
+@container header (min-width: 600px) {
+    header {
+        min-height: 30vh;
+        background-position: center;
+    }
+}
+/* ------------- HEADER ENDS ------------- */
+
+/* ------------- SERVICES SECTION ------------- */
+.services__container {
+    min-height: 90vh;
+    width: 100%;
+    background-color: #111111;
+    background-image: url("data:image/svg+xml,%3Csvg width='76' height='18' viewBox='0 0 76 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 18c-2.43-1.824-4-4.73-4-8 0-4.418-3.582-8-8-8H0V0h20c5.523 0 10 4.477 10 10 0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-5.523 4.477-10 10-10v2c-4.418 0-8 3.582-8 8 0 3.27-1.57 6.176-4 8H32zM64 0c-1.67 1.256-3.748 2-6 2H38c-2.252 0-4.33-.744-6-2h32z' fill='%23222222' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    container-type: inline-size;
+    container-name: services;
+}
+
+.services__content {
+    width: 100%;
+}
+
+.services__content p {
+    font-size: 0.8rem;
+    padding: 20px;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    text-align: center;
+    padding: 16px 10px;
+    gap: 0;
+}
+
+.grid-item {
+    background-color: #d1122e;
+    border-radius: 16px;
+    margin: 10px;
+    font-size: 0.8rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item:hover {
+    opacity: 0.86;
+}
+
+.grid-item:nth-child(3) {
+    background-color: transparent;
+    display: inline;
+}
+
+.grid-item:nth-child(4) {
+    align-self: center;
+    justify-self: center;
+    height: 45%;
+}
+
+.grid-item h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    padding: 8px 6px;
+    text-wrap: balance;
+}
+
+.grid-item p {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+    padding: 0px 7px;
+    text-wrap: pretty;
+}
+
+.btn {
+    background-color: #fff;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: #d1122e;
+    width: 50%;
+    text-decoration: none;
+    border-radius: 16px;
+    padding: 10px 10px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.86;
+}
+
+.services__overlay {
+    width: 100%;
+    height: 10vh;
+    background-color: #d1122e;
+}
+
+.services__content-title {
+    font-size: 1.2rem;
+}
+
+/* ------------- SERVICES QUERIES ------------- */
+@container services (min-width: 600px) {
+    .services__content {
+        width: 100%;
+        height: 160vh;
+    }
+    .services__content p {
+        font-size: 1rem;
+        padding: 30px 20px;
+    }
+
+    .services__content-title {
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        height: auto;
+        padding: 10px 40px;
+        gap: 0px 30px;
+    }
+
+    .grid-item h3 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+    
+    .grid-item p {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 20px;
+        text-wrap: pretty;
+    }
+    .btn--grid {
+        font-size: 1rem;
+    }
+    .services__overlay {
+        width: 100%;
+        height: 10vh;
+        background-color: #d1122e;
+    }
+}
+/* ------------- SERVICES ENDS ------------- */
+
+/* ------------- SLIDE SECTION ------------- */
+.slide__wrapper {
+    container-type: inline-size;
+    container-name: slider;
+}
+
+.slide {
+    width: 68%;
+    height: 40vh;
+    margin: 20px auto 0;
+    margin-bottom: 18px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid #d1122e;
+}
+
+.slide ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slide li {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    position: relative;
+}
+
+.slide img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+/* ------------- SLIDE QUERIES ------------- */
+@container slider (min-width: 300px) {
+    .slide {
+        width: 60%;
+        height: 65vh;
+    }
+}

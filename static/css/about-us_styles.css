@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: #d2d2d2;
+    scroll-behavior: smooth;
+}
+
+div, ul, nav, header, footer, a, li, label, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------- HEADER SECTION ------------- */
+.header__wrapper {
+    container-type: inline-size;
+    container-name: header;
+}
+
+header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) ,url(../images/about-us/bg-header.jpeg);
+    background-size: cover;
+    width: 100%;
+    min-height: 25vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ------------- HEADER QUERIES ------------- */
+@container header (min-width: 600px) {
+    header {
+        min-height: 30vh;
+        background-position: center;
+    }
+}
+/* ------------- HEADER ENDS ------------- */
+
+/* ------------- ABOUT US SECTION ------------- */
+.about-us__container {
+    container-type: inline-size;
+    container-name: about-us;
+}
+
+.about-us__content-grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 560px;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;
+}
+
+.about-us__content-item img {
+    width: 60%;
+    display: block;
+}
+
+.about-us__content-item h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    color: #b39e9e;
+}
+
+.about-us__content-item h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    text-wrap: balance;
+}
+
+.about-us__content-grid hr {
+    width: 80%;
+    align-items: start;
+    justify-content: start;
+    border: 1px solid #b39e9e;
+    margin: 20px;
+}
+
+.about-us__content-grid p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-wrap: balance;
+    line-height: 24px;
+}
+
+.about-us__content-grid p:last-child {
+    font-size: 0.7rem;
+}
+
+/* ------------- ABOUT US QUERIES ------------- */
+@container about-us (min-width: 600px) {
+    .about-us__content-grid {
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: auto;
+        gap: 30px;
+    }
+    
+    .about-us__content-item img {
+        width: 70%;
+        align-self: end;
+        justify-self: end;
+    }
+
+    .about-us__content-item h3 {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+        color: #b39e9e;
+    }
+    
+    .about-us__content-item h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        text-wrap: balance;
+    }
+    
+    .about-us__content-grid hr {
+        margin: 10px;
+    }
+    
+    .about-us__content-grid p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-wrap: balance;
+        line-height: 32px;
+    }
+
+    .about-us__content-grid p:last-child {
+        font-size: 1rem;
+        text-wrap: balance;
+        line-height: 32px;
+    }
+    
+}
+/* ------------- ABOUT US ENDS ------------- */
+
+
+/* ------------- ABOUT US SECTION 2 ------------- */
+.about-us__container-2 {
+    container-type: inline-size;
+    container-name: about-us-2;
+}
+
+.about-us__content {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)) ,url(../images/about-us/aboutus-img-2.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 285vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.about-us__grid-2 {
+    padding: 5px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.about-us__content h3 {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.about-us__content h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 5px;
+    margin-top: 7px;
+}
+
+.about-us__grid-subtitle {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-us__grid-item-2 {
+    padding: 10px 18px;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: background-color 0.5s;
+}
+
+.about-us__grid-item-2:hover {
+    background-color: #d1122e;
+}
+
+/* ------------- ABOUT US 2 QUERIES ------------- */
+@container about-us (min-width: 600px) {
+    .about-us__content {
+        width: 100%;
+        min-height: 160vh;
+        margin: 0;
+        padding: 50px;
+    }
+
+    .about-us__content h3 {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .about-us__content h2 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        letter-spacing: 5px;
+        margin-top: 7px;
+    }
+
+    .about-us__grid-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .about-us__grid-2 {
+        padding: 10px 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        grid-template-rows: auto;
+    }
+}
+/* ------------- ABOUT US 2 ENDS ------------- */

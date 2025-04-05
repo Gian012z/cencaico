@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENCAICO</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-v2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__content">
+            <img src="static/images/logo.png" class="header__content-logo">
+            <h1 class="header__content-title">CENCAICO</h1>
+            <p>
+                Centro de capacitación especializado en técnicas innovadoras para la construcción y el diseño. Aprende de los mejores y lleva tus habilidades al siguiente nivel con nuestros cursos prácticos y especializados en melamina, porcelanato líquido, resina epoxy, drywall, estuco veneciano y diseño de muebles en 3D.
+            </p>
+        </div>
+    </header>
+
+    {% include "nav.html" %}
+
+    <main class="main">
+        <div class="main__overlay">
+            <div class="main__layer"></div>
+            <div class="main__image-container"></div>
+        </div>
+        <div class="main__content">
+            <h2>CENCAICO</h2>
+            <p>
+                CENCAICO forma profesionales y emprendedores en construcción y diseño de interiores con un enfoque 100% práctico. Contamos con instructores expertos y brindamos formación aplicada al mercado laboral, impulsando el talento y el crecimiento profesional de nuestro estudiantes.
+            </p>
+        </div>
+    </main>
+
+    <div class="courses__wrapper">
+        <div class="courses__container">
+            <div class="courses__content">
+                <div class="courses__text-content">
+                    <h2><span class="courses__text-decorate">Cursos</span> 100% prácticos</h2>
+                    <h3>¡APRENDE UNA NUEVA</h3>
+                    <h3 id="courses__text-middle"><span class="courses__text-decorate">>>></span> HABILIDAD Y MEJORA <span class="courses__text-decorate"><<<<</span></h3>
+                    <h3>CON NUESTROS CURSOS!</h3>
+                    <a href="https://wa.link/fg5kgg" class="btn courses--btn" target="_blank">Solicita</a>
+                </div>
+                <div class="courses__img-content">
+                    <div class="courses__image-overlay"></div>
+                    <img src="static/images/index/courses-overlay.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="services__container">
+        <div class="services__content">
+            <h2 class="services__content-title">SERVICIOS</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Asesoría personalizada</h3>
+                    <p>
+                        Te guiamos en la aplicación de técnicas aprendidas en nuestros cursos.
+                    </p>
+                    <a href="" class="btn btn--grid">Consulta aquí</a>
+                </div>
+                <div class="grid-item">
+                    <h3>Desarrollo de proyectos</h3>
+                    <p>
+                        Ofrecemos apoyo en la ejecución de proyectos de construcción y diseño.
+                    </p>
+                    <a href="" class="btn btn--grid">Consulta aquí</a>
+                </div>
+                <div class="grid-item">
+                    <h3>Pisos Industriales</h3>
+                    <p>
+                        Elaboramos los pisos industriales para cualquier rubro y según el presupuesto indicado.
+                    </p>
+                    <a href="" class="btn btn--grid">Consulta aquí</a>
+                </div>
+                <div class="grid-item">
+                    <h3>Consultoría en innovación</h3>
+                    <p>
+                        Te ayudamos a incorporar nuevas tecnologías y tendencias en tus proyectos.
+                    </p>
+                    <a href="" class="btn btn--grid">Consulta aquí</a>
+                </div>
+            </div>
+        </div>
+        <div class="services__overlay"></div>
+    </div>
+    <div class="catalog__wrapper">
+        <div class="catalog__container">
+            <div class="catalog__img-container"></div>
+            
+            <div class="catalog__content-container">
+                <h3 class="catalog__content-title">Nuestro catálogo incluye</h3>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/tool.svg" alt="">
+                    </div>
+                    <p>
+                        Herramientas especializadas para cada tipo de capacitación.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/truck.svg" alt="">
+                    </div>
+                    <p>
+                        Materiales de alta calidad para acabados y construcción.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/layers.svg" alt="">
+                    </div>
+                    <p>
+                        Kits completos para iniciarte en melamina, porcelanato líquido y más.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/shopping-bag.svg" alt="">
+                    </div>
+                    <p>
+                        Opciones de compra y asesoría personalizada para elegir los insumos correctos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+</html>

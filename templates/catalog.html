@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - CENCAICO</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catalog_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Flipbook -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/pdf.min.js"></script>
+    <script src="js/3dflipbook.min.js"></script>
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="header__wrapper">
+        <header>
+            <h2>Catálogo</h2>
+        </header>
+    </div> 
+
+    <div class="catalog__wrapper">
+        <div class="catalog__container">
+            <div class="catalog__img-container"></div>
+            
+            <div class="catalog__content-container">
+                <h3 class="catalog__content-title">Nuestro catálogo incluye</h3>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/tool.svg" alt="">
+                    </div>
+                    <p>
+                        Herramientas especializadas para cada tipo de capacitación.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/truck.svg" alt="">
+                    </div>
+                    <p>
+                        Materiales de alta calidad para acabados y construcción.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/layers.svg" alt="">
+                    </div>
+                    <p>
+                        Kits completos para iniciarte en porcelanato líquido, pinturas decorativas y más.
+                    </p>
+                </div>
+                <div class="catalog__grid-item">
+                    <div class="catalog__grid-icon">
+                        <img src="static/icons/shopping-bag.svg" alt="">
+                    </div>
+                    <p>
+                        Opciones de compra y asesoría personalizada para elegir los insumos correctos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog_file"> 
+            <iframe src="https://online.fliphtml5.com/judga/tpda/" width="80%" height="100vh" seamless="" scrolling="no" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-read; clipboard-write"></iframe>
+        </div>
+    
+        <a href="{{ url_for('static', filename='catalog.pdf') }}" class="btn btn--grid" download="catalogo.pdf">Descargar Catálogo</a>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+</html>

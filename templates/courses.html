@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - CENCAICO</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courses_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="header__wrapper">
+        <header>
+            <h2>Cursos</h2>
+        </header>
+    </div>
+
+    <div class="courses__container">
+        <div class="courses__content-grid">
+            <div class="courses__content-item">
+                <img src="static/images/courses/courses-img-1.JPG" alt="">
+            </div>
+            <div class="courses__content-item">
+                <h3>Cursos</h3>
+                <h2>Centro de capacitación en técnicas <strong>innovadoras de construcción y diseño.</strong></h2>
+                <hr>
+                <p>
+                    En <strong>CENCAICO</strong> ofrecemos programas de capacitación especializados en técnicas innovadoras para la contstrucción y el diseño. Nuestros cursos están diseñados para brindar conocimientos prácticos y actualizados, permitiendo desarrollar habilidades de un gran nivel con materiales y herramientas de última generación.
+                </p>
+            </div>
+        </div>
+
+        <div class="courses__container-2">
+            <div class="courses__content">
+                <h3>Cursos</h3>
+                <h2>CENCACICO</h2>
+                <div class="courses__grid-2">
+                    <div class="courses__grid-item-2">
+                        <h4>Melamina</h4>
+                        <p>
+                            Aprende a diseñar y fabricar muebles de melamina con técnicas profesionales. Desde la elección de materiales hasta el ensamblaje. Nuestro curso te enseñará a crear piezas funcionales y estéticas.
+                        </p>
+                        <div class="slide__wrapper">
+                            <div class="slide">
+                                <ul>
+                                    <li>
+                                        <img src="static/images/courses/melamina/img-1.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/melamina/img-2.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/melamina/img-3.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/melamina/img-4.jpeg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://wa.link/fg5kgg" class="btn--grid" target="_blank">Inscribirse aquí</a>
+                    </div>
+                    <div class="courses__grid-item-2">
+                        <h4>Porcelanato Líquido y Resina Epoxy</h4>
+                        <p>
+                            Domina la aplicación de estos materiales innovadores para crear pisos y superficies de alto impacto. Aprende a realizar acabados duraderos, decorativos y altamente resistentes.
+                        </p>
+                        <div class="slide__wrapper">
+                            <div class="slide">
+                                <ul>
+                                    <li>
+                                        <img src="static/images/courses/porcelanato/img-1.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/porcelanato/img-2.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/porcelanato/img-3.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/porcelanato/img-4.jpeg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://wa.link/fg5kgg" class="btn--grid" target="_blank">Inscribirse aquí</a>
+                    </div>
+                    <div class="courses__grid-item-2">
+                        <h4>Drywall</h4>
+                        <p>
+                            Conviértete en un experto en construcción en seco y optimiza espacios con estructuras modernas. Aprende a instalar tabiques, techos falsos y a manejar herramientas especializadas.
+                        </p>
+                        <div class="slide__wrapper">
+                            <div class="slide">
+                                <ul>
+                                    <li>
+                                        <img src="static/images/courses/drywall/IMG_6904.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/drywall/IMG_6963.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/drywall/IMG_6966.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/drywall/IMG_6968.jpeg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://wa.link/fg5kgg" class="btn--grid" target="_blank">Inscribirse aquí</a>
+                    </div>
+                    <div class="courses__grid-item-2">
+                        <h4>Pinturas Decorativas</h4>
+                        <p>
+                            Descubre el arte sobre todos los acabados: Estuvo veneciano, Finocemento, Microcemento, Granallado, Texturas, entre otros.
+                        </p>
+                        <div class="slide__wrapper">
+                            <div class="slide">
+                                <ul>
+                                    <li>
+                                        <img src="static/images/courses/estuco/IMG_5800.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/estuco/IMG_5813.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/estuco/IMG_5814.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/estuco/IMG_5824.jpeg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://wa.link/fg5kgg" class="btn--grid" target="_blank">Inscribirse aquí</a>
+                    </div>
+                    <div class="courses__grid-item-2">
+                        <h4>Diseño de Muebles en 3D</h4>
+                        <p>
+                            Diseña y visualiza tus proyectos con herramientas digitales avanzadas. Este curso es ideal para quienes buscan dar vida a sus ideas antes de la fabricación.
+                        </p>
+                        <div class="slide__wrapper">
+                            <div class="slide last-slide">
+                                <ul>
+                                    <li>
+                                        <img src="static/images/courses/muebles/img-1.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/muebles/img-2.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/muebles/img-3.jpeg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="static/images/courses/muebles/img-4.jpeg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://wa.link/fg5kgg" class="btn--grid" target="_blank">Inscribirse aquí</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+</html>

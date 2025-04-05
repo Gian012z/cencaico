@@ -1,0 +1,155 @@
+
+/* ------------- FOOTER SECTION ------------- */
+footer {
+    padding: 20px 40px;
+    font-size: 0.6rem;
+    text-align: center;
+    background: #111;
+    color: #fff;
+    max-height: 100vh;
+    height: auto;
+    width: 100%;
+    container-type: inline-size;
+    container-name: footer;
+}
+
+footer h2 {
+    font-size: 0.4rem;
+    font-weight: 400;
+}
+
+.footer__link  {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 6px;
+}
+
+footer h3 {
+    font-size: 0.5rem;
+    font-weight: 400;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 115px);
+    grid-template-rows: 220px 120px;
+    align-items: top;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    row-gap: 20px;
+}
+
+.footer__grid-item:first-child {
+    display: flex;
+    flex-direction: column;
+}
+.footer__grid-item {
+    margin-bottom: 20px;
+}
+
+.footer__grid-item h2 {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.footer__grid-item p > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer__grid-item p > a:hover {
+    text-decoration: underline;
+}
+
+.footer__grid-item p {
+    text-align: left;
+    font-size: 0.6rem;
+    text-wrap: balance;
+    padding: 3px 0;
+}
+
+.footer__grid-item:last-child h2{
+    margin-bottom: 20px;
+}
+
+.footer__grid-item-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: left;
+    width: 10%;
+    min-width: 10vh;
+}
+
+.footer__grid-item-links a {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.footer__grid-item-links img {
+    width: 45%;
+}
+
+.footer__grid-item-links a:hover {
+    opacity: 0.8;
+}
+
+hr {
+    border: 1px solid #bbbf;
+    width: 100%;
+}
+
+/* ------------- FOOTER QUERIES ------------- */
+@container footer (min-width: 600px) {
+    footer hr {
+        margin-top: 30px;
+    }
+
+    footer h2 {
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+    
+    .footer__link  {
+        text-decoration: none;
+        color: #fff;
+        padding: 0 36px;
+    }
+
+    .footer__link:hover  {
+        text-decoration: underline;
+    }
+
+    footer h3 {
+        font-size: 0.8rem;
+        margin: 0;
+        margin-top: 26px;
+    }
+
+    .footer__grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .footer__grid-item h2 {
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin-bottom: 0;
+    }
+
+    .footer__grid-item p {
+        font-size: 0.7rem;
+    }
+
+    .footer__grid-item-links img {
+        width: 48%;
+    }
+}

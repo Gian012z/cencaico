@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - CENCAICO</title>
+    <!-- Styles -->
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="header__wrapper">
+        <header>
+            <h2>Nosotros</h2>
+        </header>
+    </div>
+
+    <div class="about-us__container">
+        <div class="about-us__content-grid">
+            <div class="about-us__content-item">
+                <img src="static/images/about-us/aboutus-img-1.jpeg" alt="">
+            </div>
+            <div class="about-us__content-item">
+                <h3>¿Quiénes somos?</h3>
+                <h2>Centro de capacitación en técnicas <strong>innovadoras de construcción y diseño.</strong></h2>
+                <hr>
+                <p>
+                    <strong>CENCAICO</strong> es un centro de capacitación especializado en técnicas innovadoras para la construcción y el diseño. Aprende de los mejores y lleva tus habilidades al siguiente nivel con nuestros cursos prácticos y especializados en melamina, porcelanato líquido, resina epoxy, drywall, estuco veneciano y diseño de muebles en 3D.
+                </p>
+                <p>
+                    CENCAICO nació con la visión de capacitar y profesionalizar a personas apasionadas por la construcción y los acabados decorativos. Desde nuestros inicios, nos propusimos brindar formación práctica, accesible y de alta calidad, permitiendo que cientos de alumnos adquieran conocimientos y habilidades que los impulsen a generar nuevas oportunidades laborales o mejorar su negocio.
+                </p>
+            </div>
+        </div>
+        <div class="about-us__container-2">
+            <div class="about-us__content">
+                <h3>Bienvenido</h3>
+                <h2>CENCACICO</h2>
+                <div class="about-us__grid-2">
+                    <div class="about-us__grid-item-2">
+                        <h4>Misión</h4>
+                        <p>
+                            Nuestra misión es formar profesionales altamente capacitados, brindándoles herramientas y conocimientos actualizados para que puedan destacarse en la industria. Nos enfocamos en ofrecer una enseñanza práctica y efectiva, adaptada a las necesidades del mercado laboral actual.
+                        </p>
+                    </div>
+                    <div class="about-us__grid-item-2">
+                        <h4>Visión</h4>
+                        <p>
+                            Ser el centro de capacitación líder en construcción y diseño, formando profesionales altamente capacitados con técnicas innovadoras, acceso a materiales de calidad y un enfoque práctico. Impulsamos la innovación y el crecimiento profesional para destacar en el sector.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="about-us__grid-subtitle">Valores</h4>
+                <div class="about-us__grid-2">
+                    <div class="about-us__grid-item-2">
+                        <h4>Compromiso</h4>
+                        <p>
+                            Creemos en el poder del conocimiento práctico para generar oportunidades de crecimiento y desarrollo profesional.
+                        </p>
+                    </div>
+                    <div class="about-us__grid-item-2">
+                        <h4>Calidad y excelencia</h4>
+                        <p>
+                            Nuestros cursos están diseñados con un enfoque técnico, asegurando formación de alto nivel con instructores especializados.
+                        </p>
+                    </div>
+                    <div class="about-us__grid-item-2">
+                        <h4>Accesibilidad y oportunidades</h4>
+                        <p>
+                            Brindamos cursos accesibles para que cualquier persona, sin importar su experiencia, pueda aprender y emprender en el sector de la construcción.
+                        </p>
+                    </div>
+                    <div class="about-us__grid-item-2">
+                        <h4>Innovación y mejora continua</h4>
+                        <p>
+                            Nos mantenemos en constante actualización, incorporando nuevas técnicas y tecnologías para ofrecer siempre lo mejor a nuestros alumnos.
+                        </p>
+                    </div>
+                    <div class="about-us__grid-item-2">
+                        <h4>Cercanía y apoyo</h4>
+                        <p>
+                            Acompañamos a nuestros estudiantes en cada paso de su aprendizaje, ofreciendo asesoría gratuita para sus primeros proyectos y descuentos exclusivos en insumos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+</html>
