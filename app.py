@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from firebird.driver import driver_config, connect
+from firebird.driver import connect
 import uuid
 
 app = Flask(__name__)
@@ -12,14 +12,13 @@ app.config.update(
     SESSION_COOKIE_SAMESITE='Lax'
 )
 
-def bd_cconnection():
-    driver_config.fb_library_name = '/opt/firebird/lib/libfbclient.so'
+def bd_connection():
     return connect(
-    database='localhost:cencaico',
-    user='SYSDBA',
-    password='MyPass123',
-    charset='UTF8'
-)
+        database='firebird3-engine:cencaico',
+        user='SYSDBA',
+        password='MyPass123',
+        charset='UTF8'
+        )
 
 @app.route("/")
 def index():
@@ -82,7 +81,7 @@ def reclamo():
         ]
 
         print(data)
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute(
             """INSERT INTO RECLAMACIONES (ID, RNAME, SNAME, DOMICILIO, DNI, PNUMBER, EMAIL, PARENTS, BIEN, MONTO, DESCRIPTION, RECLAMOQUEJA, DETALLE, PEDIDO, DECLARACION)
@@ -91,7 +90,7 @@ def reclamo():
         
         con.commit()
         con.close()
-    return "Formulario recibido"
+    return redirect(url_for('ldr'))
 
 @app.route('/melamina-arequipa')
 def melamina_arequipa():
@@ -119,7 +118,7 @@ def guardar_datos_melamina():
     ]
 
     try:
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute("""
         INSERT INTO LPMELAMINA (ID, CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS)
@@ -158,7 +157,7 @@ def guardar_datos_drywall():
     ]
 
     try:
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute("""
         INSERT INTO LPDRYWALL (ID, CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS)
@@ -198,7 +197,7 @@ def guardar_datos_porcelanato():
     ]
 
     try:
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute("""
         INSERT INTO LPPORCELANATO (ID, CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS)
@@ -213,7 +212,7 @@ def guardar_datos_porcelanato():
     
 @app.route('/ldr_data')
 def ldr_data():
-    con = bd_cconnection()
+    con = bd_connection()
     cur = con.cursor()
     cur.execute("""
     SELECT uuid_to_char(ID), RNAME, SNAME, DOMICILIO, DNI, PNUMBER, EMAIL, PARENTS, BIEN, MONTO, DESCRIPTION, RECLAMOQUEJA, DETALLE, PEDIDO, DECLARACION
@@ -224,7 +223,7 @@ def ldr_data():
 
 @app.route('/melamina_data')
 def melamina_data():
-    con = bd_cconnection()
+    con = bd_connection()
     cur = con.cursor()
     cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
     FROM LPMELAMINA""")
@@ -233,7 +232,7 @@ def melamina_data():
 
 @app.route('/drywall_data')
 def drywall_data():
-    con = bd_cconnection()
+    con = bd_connection()
     cur = con.cursor()
     cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
     FROM LPDRYWALL""")
@@ -242,7 +241,7 @@ def drywall_data():
 
 @app.route('/porcelanato_data')
 def porcelanato_data():
-    con = bd_cconnection()
+    con = bd_connection()
     cur = con.cursor()
     cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
     FROM LPPORCELANATO""")
@@ -255,7 +254,7 @@ def delete_data(id):
         print(id)
         binary_id = id.bytes
         print(binary_id)
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPMELAMINA WHERE ID = ?', (binary_id,))
         con.commit()
@@ -269,7 +268,7 @@ def delete_data2(id):
         print(id)
         binary_id = id.bytes
         print(binary_id)
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPDRYWALL WHERE ID = ?', (binary_id,))
         con.commit()
@@ -283,7 +282,7 @@ def delete_data3(id):
         print(id)
         binary_id = id.bytes
         print(binary_id)
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPPORCELANATO WHERE ID = ?', (binary_id,))
         con.commit()
@@ -297,7 +296,7 @@ def delete_ldr(id):
         print(id)
         binary_id = id.bytes
         print(binary_id)
-        con = bd_cconnection()
+        con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM RECLAMACIONES WHERE ID = ?', (binary_id,))
         con.commit()
