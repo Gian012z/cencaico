@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import fdb
+from firebird.driver import driver_config, connect
 import uuid
 
 app = Flask(__name__)
@@ -13,8 +13,9 @@ app.config.update(
 )
 
 def bd_cconnection():
-    return fdb.connect(
-    dsn='firebird3-engine:cencaico',
+    driver_config.fb_library_name = '/opt/firebird/lib/libfbclient.so'
+    return connect(
+    database='localhost:cencaico',
     user='SYSDBA',
     password='MyPass123',
     charset='UTF8'
