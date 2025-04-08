@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import fdb
 import uuid
 
@@ -209,6 +209,101 @@ def guardar_datos_porcelanato():
     except Exception as e:
         print("Error al guardar los datos: ", e)
         return 'Error', 200
+    
+@app.route('/ldr_data')
+def ldr_data():
+    con = bd_cconnection()
+    cur = con.cursor()
+    cur.execute("""
+    SELECT uuid_to_char(ID), RNAME, SNAME, DOMICILIO, DNI, PNUMBER, EMAIL, PARENTS, BIEN, MONTO, DESCRIPTION, RECLAMOQUEJA, DETALLE, PEDIDO, DECLARACION
+    FROM RECLAMACIONES
+    """)
+    rows = cur.fetchall()
+    return render_template('ldr_data.html', rows=rows)
+
+@app.route('/melamina_data')
+def melamina_data():
+    con = bd_cconnection()
+    cur = con.cursor()
+    cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
+    FROM LPMELAMINA""")
+    rows = cur.fetchall()
+    return render_template('melamina_data.html', rows=rows)
+
+@app.route('/drywall_data')
+def drywall_data():
+    con = bd_cconnection()
+    cur = con.cursor()
+    cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
+    FROM LPDRYWALL""")
+    rows = cur.fetchall()
+    return render_template('drywall_data.html', rows=rows)
+
+@app.route('/porcelanato_data')
+def porcelanato_data():
+    con = bd_cconnection()
+    cur = con.cursor()
+    cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
+    FROM LPPORCELANATO""")
+    rows = cur.fetchall()
+    return render_template('porcelanato_data.html', rows=rows)
+
+@app.route('/delete_data/<uuid:id>', methods=['POST'])
+def delete_data(id):
+    try:
+        print(id)
+        binary_id = id.bytes
+        print(binary_id)
+        con = bd_cconnection()
+        cur = con.cursor()
+        cur.execute('DELETE FROM LPMELAMINA WHERE ID = ?', (binary_id,))
+        con.commit()
+        return redirect(url_for('melamina_data'))
+    except Exception as e:
+        return f"Error al eliminar: {e}"
+
+@app.route('/delete_data2/<uuid:id>', methods=['POST'])
+def delete_data2(id):
+    try:
+        print(id)
+        binary_id = id.bytes
+        print(binary_id)
+        con = bd_cconnection()
+        cur = con.cursor()
+        cur.execute('DELETE FROM LPDRYWALL WHERE ID = ?', (binary_id,))
+        con.commit()
+        return redirect(url_for('drywall_data'))
+    except Exception as e:
+        return f"Error al eliminar: {e}"
+
+@app.route('/delete_data3/<uuid:id>', methods=['POST'])
+def delete_data3(id):
+    try:
+        print(id)
+        binary_id = id.bytes
+        print(binary_id)
+        con = bd_cconnection()
+        cur = con.cursor()
+        cur.execute('DELETE FROM LPPORCELANATO WHERE ID = ?', (binary_id,))
+        con.commit()
+        return redirect(url_for('porcelanato_data'))
+    except Exception as e:
+        return f"Error al eliminar: {e}"
+
+@app.route('/delete_ldr/<uuid:id>', methods=['POST'])
+def delete_ldr(id):
+    try:
+        print(id)
+        binary_id = id.bytes
+        print(binary_id)
+        con = bd_cconnection()
+        cur = con.cursor()
+        cur.execute('DELETE FROM RECLAMACIONES WHERE ID = ?', (binary_id,))
+        con.commit()
+        return redirect(url_for('ldr_data'))
+    except Exception as e:
+        return f"Error al eliminar: {e}"
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos LDR - CENCAICO</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ldrdata_styles.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Libro de Reclamaciones</h1>
+</header>
+
+<div class="container">
+    <h2>Reclamaciones Registradas</h2>
+    <div class="table__wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Domicilio</th>
+                    <th>DNI</th>
+                    <th>Número</th>
+                    <th>Email</th>
+                    <th>Padre o madre</th>
+                    <th>Bien</th>
+                    <th>Monto</th>
+                    <th>Descripción</th>
+                    <th>Reclamo/Queja</th>
+                    <th>Detalle</th>
+                    <th>Pedido</th>
+                    <th>Declaración</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reclamacion in rows %}
+                <tr>
+                    <td>{{ reclamacion[1] }}</td>
+                    <td>{{ reclamacion[2] }}</td>
+                    <td>{{ reclamacion[3] }}</td>
+                    <td>{{ reclamacion[4] }}</td>
+                    <td>{{ reclamacion[5] }}</td>
+                    <td>{{ reclamacion[6] }}</td>
+                    <td>{{ reclamacion[7] }}</td>
+                    <td>{{ reclamacion[8] }}</td>
+                    <td>{{ reclamacion[9] }}</td>
+                    <td>{{ reclamacion[10] }}</td>
+                    <td>{{ reclamacion[11] }}</td>
+                    <td>{{ reclamacion[12] }}</td>
+                    <td>{{ reclamacion[13] }}</td>
+                    <td>{{ reclamacion[14] }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_ldr', id=reclamacion[0]) }}">
+                            <button type="submit" class="delete-btn">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
