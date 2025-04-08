@@ -174,7 +174,7 @@ select {
 @container landingpage (min-width: 600px) {
     .landingpage__title {
         margin-top: 0.8rem;
-        font-size: 2.3rem;
+        font-size: 2.6rem;
         text-wrap: balance;
     }
 
@@ -187,11 +187,46 @@ select {
         flex-direction: row;
     }
 
+    .form__content-text {
+        font-size: 30px;
+        padding: 0 32px 0 32px;
+        font-weight: 500;
+    }
+
     .form__content-item:first-child {
         order: 2;
+        min-height: 80vh;
     }
 
     .form__content-title {
-        font-size: 2.1rem;
+        font-size: 2.5rem;
+    }
+    
+    label {
+        font-size: 1.5rem;
+    }
+
+    input, select {
+        font-size: 1.4rem;
+        margin-bottom: 18px;
+    }
+
+    input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .btn-start {
+        font-weight: bold;
+        line-height: 1.2;
+        font-size: 2.4rem;
+        padding: 0.6em 1.6em;
+        margin: 0;
+        outline: 2px solid red;
+        outline-offset: 4px;
+    }
+    
+    button {
+        font-size: 1.5rem;
+        padding: 1rem 1.8rem;
     }
 }

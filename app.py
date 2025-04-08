@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from flask_talisman import Talisman
 import fdb
 import uuid
 
@@ -15,7 +14,7 @@ app.config.update(
 
 def bd_cconnection():
     return fdb.connect(
-    dsn='localhost:cencaico',
+    dsn='firebird3-engine:cencaico',
     user='SYSDBA',
     password='MyPass123',
     charset='UTF8'

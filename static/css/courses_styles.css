@@ -285,7 +285,13 @@ header h2 {
         font-size: 1.2rem;
         margin-bottom: 0;
     }
-    
+
+    .btn--grid {
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 8px 20px;
+    }    
+
 }
 /* ------------- COURSES 2 ENDS ------------- */
 
