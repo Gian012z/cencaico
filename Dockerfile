@@ -1,10 +1,28 @@
 FROM python:3.11-slim
 
-# Instala Firebird client
-RUN apt-get update && apt-get install -y firebird-dev libfbclient2 && apt-get clean
+# Variables
+ENV FIREBIRD_VERSION=4.0.3.2975-0
 
+# Instala dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    wget \
+    libtommath1 \
+    libicu67 \
+    libncurses6 \
+    && apt-get clean
+
+# Descarga e instala el cliente Firebird 4.0
+RUN wget https://github.com/FirebirdSQL/firebird/releases/download/v4.0.3/Firebird-4.0.3.2975-0.amd64.tar.gz \
+    && mkdir -p /opt/firebird \
+    && tar -xzf Firebird-${FIREBIRD_VERSION}.amd64.tar.gz -C /opt/firebird --strip-components=1 \
+    && rm Firebird-${FIREBIRD_VERSION}.amd64.tar.gz
+
+# Agrega cliente Firebird a la librería del sistema
+ENV LD_LIBRARY_PATH=/opt/firebird/lib:$LD_LIBRARY_PATH
+ENV PATH=/opt/firebird/bin:$PATH
+
+# Instala Python requirements
 WORKDIR /app
-
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
