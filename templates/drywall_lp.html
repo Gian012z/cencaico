@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drywall - CENCAICO</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/drywall_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <script src="{{ url_for('static', filename='js/melamina.js') }}""></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="landingpage__wrapper">
+        <h2 class="landingpage__title"><span class="landingpage__title-strong">Aprende</span> una nueva habilidad y mejora tus ingresos con nuestro curso de Construcción en sistema Drywall</h2>
+
+        <div class="form__container">
+            <form id="multiStepForm">
+                
+                <div class="form__item active">
+                    <label for="nombre" class="form-label">Nombre y Apellido *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="ej. Javier Pérez" onchange="toggleButton1()"/>
+
+                    <label for="numero" class="form-label">Número/Whatsapp *</label>
+                    <input type="text" id="numero" name="numero" required placeholder="ej. 987654321" onchange="toggleButton1()"/>
+
+                    <button type="button" onclick="nextStep()" style="display: none;" id="first-btn">Siguiente</button>
+                </div>
+
+                <div class="form__item">
+                    <div class="form__content">
+                        <div class="form__content-item">
+                            
+                        </div>
+
+                        <div class="form__content-item">
+                            <h3 class="form__content-text">Responde esta breve encuesta para conocerte mejor y así poder brindarte exactamente lo que necesitas.</h3>
+                            <h3 class="form__content-title">CENCAICO</h3>
+                            <button type="button" class="btn-start" onclick="nextStep()">COMENZAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__item">
+                    <label for="rubro" class="form-label">¿En qué rubro te desempeñas actualmente? *</label>
+                    <select id="rubro" name="rubro" placeholder="Selecciona tu respuesta" onchange="toggleButton2()"/>
+                        <option value="">Selecciona tu respuesta</option>
+                        <option value="Construcción/Albañilería">Construcción/Albañilería</option>
+                        <option value="Acabados Decorativos">Acabados Decorativos</option>
+                        <option value="Carpintería/Melamina">Carpintería/Melamina</option>
+                        <option value="Diseño y Arquitectura">Diseño y Arquitectura</option>
+                        <option value="No tengo experiencia, pero quiero aprender">No tengo experiencia, pero quiero aprender</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                    <button type="button" onclick="nextStep()" style="display: none;" id="third-btn">Siguiente</button>
+                </div>
+
+                <div class="form__item">
+                    <label for="disponibilidad" class="form-label">El curso de Drywall se dicta entre semana o fines de semana, ¿Tienes disponibilidad para asistir al curso elegido? *</label>
+                    <select id="disponibilidad" name="disponibilidad" required placeholder="Selecciona tu respuesta" onchange="toggleButton3()"/>
+                        <option value="">Selecciona tu respuesta</option>
+                        <option value="Sí, puedo asistir entre semana">Sí, puedo asistir entre semana</option>
+                        <option value="Sí, puedo asistir los fines de semana">Sí, puedo asistir los fines de semana</option>
+                        <option value="Me interesa, pero necesito ver mi disponibilidad">Me interesa, pero necesito ver mi disponibilidad</option>
+                        <option value="No estoy seguro">No estoy seguro</option>
+                    </select>
+                    <button type="button" onclick="nextStep()" style="display: none;" id="fourth-btn">Siguiente</button>
+                </div>
+
+                <div class="form__item">
+                    <label for="inicio-curso" class="form-label">Tenemos un inicio próximo, ¿Estás listo para capacitarte de inmediato? *</label>
+                    <select id="inicio-curso" name="inicio-curso" placeholder="Selecciona tu respuesta" onchange="toggleButton4()"/>
+                        <option value="">Selecciona tu respuesta</option>
+                        <option value="Sí, quiero empezar en la próxima fecha disponible.">Sí, quiero empezar en la próxima fecha disponible.</option>
+                        <option value="Estoy interesado, pero necesito más tiempo.">Estoy interesado, pero necesito más tiempo.</option>
+                        <option value="No estoy seguro en este momento.">No estoy seguro en este momento.</option>
+                    </select>
+                    <button type="button" onclick="nextStep()" style="display: none;" id="fifth-btn">Siguiente</button>
+                </div>
+
+                <div class="form__item">
+                    <label for="costos" class="form-label">¿Cuentas con el presupuesto para tu inscripción? Los costos de inversión van desde los S/.350 *</label>
+                    <select id="costos" name="costos" placeholder="Selecciona tu respuesta" onchange="toggleButton5()"/>
+                        <option value="">Selecciona tu respuesta</option>
+                        <option value="Sí, estoy listo para invertir en mi formación.">Sí, estoy listo para invertir en mi formación.</option>
+                        <option value="Necesito evaluar mis finanzas, pero sigo interesado.">Necesito evaluar mis finanzas, pero sigo interesado.</option>
+                        <option value="Solo estoy averiguando por ahora.">Solo estoy averiguando por ahora.</option>
+                    </select>
+                    <button type="submit" onclick="nextStep()" style="display: none;" id="sixth-btn">Enviar y continuar con mi inscripción</button>
+                </div>
+
+                <div class="form__item">
+                    <h2 class="form__submit-message">Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.</h2>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const steps = document.querySelectorAll(".form__item");
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                steps[currentStep].classList.remove("active");
+                currentStep++;
+                steps[currentStep].classList.add("active");
+            }
+        }
+
+        const form = document.getElementById("multiStepForm");
+        
+        form.addEventListener('submit', async function (e){
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            const response = await fetch('/guardar-drywall', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                steps[currentStep].classList.remove('active');
+                const mensajeFinal = steps[steps.length - 1];
+                mensajeFinal.classList.add('active');
+            } else {
+                alert("Hubo un error al guardar. Intenta de nuevo.")
+            }
+        });
+
+        
+    </script>
+
+    {% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario Paso a Paso</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/melamina.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page__wrapper">
+        <h2 class="form-title"><span class="form-title_strong">Aprende</span> una nueva habilidad y mejora tus ingresos con nuestro curso de Melamina</h2>
+        <div class="form-container">
+            <form id="multiStepForm">
+                <div class="form-step active">
+                    <label for="nombre" class="form-label">Nombre y Apellido *</label>
+                    <input type="text" id="nombre" required placeholder="ej. Javier Pérez"/>
+                    <label for="numero" class="form-label">Número/Whatsapp *</label>
+                    <input type="text" id="numero" required placeholder="ej. 987654321"/>
+                    <button type="button" onclick="nextStep()">Siguiente</button>
+                </div>
+
+                <div class="form-step">
+                    <div class="start-container">
+                        <div class="start-item">
+                            <h3 class="text-start">Responde esta breve encuesta para conocerte mejor y asís poder brindarte exactamente lo que necesitas.</h3>
+                            <h3 class="title-start">CENCAICO</h3>
+                            <button type="button" class="btn-start" onclick="nextStep()">COMENZAR</button>
+                        </div>
+                        <div class="start-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, cumque assumenda. Placeat at velit fuga animi modi, beatae harum omnis voluptatibus nihil doloribus repellendus facere officia pariatur? Voluptatum, ea sint!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" required />
+                    <button type="button" onclick="nextStep()">Siguiente</button>
+                </div>
+
+                <div class="form-step">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        let currentStep = 0;
+        const steps = document.querySelectorAll(".form-step");
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                steps[currentStep].classList.remove("active");
+                currentStep++;
+                steps[currentStep].classList.add("active");
+            }
+        }
+
+        // Opcional: manejar envío
+        document.getElementById("multiStepForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Formulario enviado correctamente.");
+        // Aquí puedes enviar los datos vía AJAX si quieres
+        });
+    </script>
+</body>
+</html>

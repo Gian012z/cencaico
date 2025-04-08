@@ -32,56 +32,50 @@
                 <h2 class="text"><strong>Dirección: </strong> Avenida Progreso 542, Miraflores, Arequipa, Peru</h2>
             </p>
 
-            <form action="">
+            <form method="POST" action="/reclamo">
                 <fieldset>
                     <legend>INFORMACIÓN DEL CONSUMIDOR</legend>
 
                     <div class="form__grid">
                         <div class="form__grid-item">
                             <label for="nombre">*Nombres
-                                <input type="text" name="nombre">
+                                <input type="text" name="nombre" required>
                             </label>
                         </div>
                         
                         <div class="form__grid-item">
                             <label for="apellidos">*Apellidos
-                                <input type="text" name="apellidos">
+                                <input type="text" name="apellidos" required>
                             </label>
                         </div>
 
                         <div class="form__grid-item">
                             <label for="direccion">*Domicilio
-                                <input type="text" name="direccion">
+                                <input type="text" name="domicilio" required>
                             </label>
                         </div>
     
                         <div class="form__grid-item">
                             <label for="dni">*DNI / CE:
-                                <input type="text" name="dni">
+                                <input type="text" name="dni" placeholder="12345678" required>
                             </label>
                         </div>
 
                         <div class="form__grid-item">
                             <label for="phone">*Teléfono / Celular
-                                <input type="number" name="phone">
+                                <input type="number" name="phone" required>
                             </label>
                         </div>
     
                         <div class="form__grid-item">
                             <label for="mail">*Correo electrónico
-                                <input type="mail" name="mail">
+                                <input type="mail" name="email" placeholder="example@gmail.com" required>
                             </label>
                         </div>
     
                         <div class="form__grid-item">
                             <label for="parents">*Padre o madre
-                                <input type="text" name="parents">
-                            </label>
-                        </div>
-        
-                        <div class="form__grid-item">
-                            <label for="">Represento a un menor de edad
-                                <input type="checkbox">
+                                <input type="text" name="parents" required>
                             </label>
                         </div>
                     </div>
@@ -97,25 +91,25 @@
                     <div class="form__grid-2">
                         <div class="form__grid-item-2">
                             <label for="">Producto
-                                <input type="checkbox">
+                                <input type="radio" name="tipo_bien" value="producto">
                             </label>
                         </div>
                        
                         <div class="form__grid-item-2">
                             <label for="">Monto reclamado:
-                                <input type="number">
+                                <input type="number" name="monto">
                             </label>
                         </div>
 
                         <div class="form__grid-item-2">
                             <label for="">Servicio
-                                <input type="checkbox">
+                                <input type="radio" name="tipo_bien" value="servicio">
                             </label>
                         </div>
 
                         <div class="form__grid-item-2">
                             <label for="">Descripción:
-                                <textarea name="" id=""></textarea>
+                                <textarea name="mdescription"></textarea>
                             </label>
                         </div>
                     </div>
@@ -127,25 +121,25 @@
                     <div class="form__grid-3">
                         <div class="form__grid-item-3">
                             <label for="reclamo">Reclamo
-                                <input type="checkbox" name="reclamo">
+                                <input type="radio" name="tipo_detalle" value="reclamo">
                             </label>
                         </div>
                         
                         <div class="form__grid-item-3">
                             <label for="queja">Queja
-                                <input type="checkbox" name="queja">
+                                <input type="radio" name="tipo_detalle" value="queja">
                             </label>
                         </div>
 
                         <div class="form__grid-item-3">
                             <label for="">*Detalle (Explica brevemente qué sucedió)
-                                <textarea name="" id=""></textarea>
+                                <textarea name="detalle"></textarea>
                             </label>
                         </div>
 
                         <div class="form__grid-item-3">
                             <label for="">*Pedido (Explica qué es lo que estás solicitando)
-                                <textarea name="" id=""></textarea>
+                                <textarea name="pedido"></textarea>
                             </label>
                         </div>
 
@@ -155,7 +149,7 @@
                         </div>
 
                         <div class="form__grid-item-3">
-                            <label for=""><input type="checkbox" name="" id=""> *Declaro ser el usuario del servicio o producto y acepto el contenido del presente formulario manifestando bajo Declaración Jurada la veracidad de los hechos descritos.
+                            <label for=""><input type="checkbox" name="declaracion" value="autoriza"> *Declaro ser el usuario del servicio o producto y acepto el contenido del presente formulario manifestando bajo Declaración Jurada la veracidad de los hechos descritos.
                             </label>
                         </div>
                     </div>

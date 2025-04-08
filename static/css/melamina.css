@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-image: radial-gradient(#000, #111, #222);
+    color: #d2d2d2;
+    scroll-behavior: smooth;
+}
+
+div, ul, nav, header, footer, a, li, label, body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    text-wrap: balance;
+}
+
+.form-title_strong {
+    color: red;
+}
+
+.form-container {
+    justify-self: center;
+    background: transparent;
+    padding: 12px 0 0 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100vw;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid red;
+    margin-bottom: 12px;
+}
+
+input::placeholder {
+    color: red;
+}
+
+.form-step {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    text-align: center;
+    justify-self: start;
+    align-self: start;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.start-container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.start-item {
+    flex: 1;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+}
+
+.start-item:first-child {
+    width: 30%;
+    background: #fff;
+}
+
+.start-item:last-child {
+    background: #0f0;
+    min-height: 80vh;
+    background-image: url(../images/landingpage_melamina/melamina.webp);
+    background-size: cover;
+}
+
+.text-start {
+    font-weight: 500;
+    text-align: center;
+    padding: 0 40px 5px 40px;
+    text-wrap: pretty;
+}
+
+.title-start {
+    color: red;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.btn-start {
+    display: block;
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 16px 28px;
+    justify-self: center;
+}
+
+.img-start {
+    max-width: 80%;
+    height: auto;
+}
