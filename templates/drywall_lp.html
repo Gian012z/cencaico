@@ -97,6 +97,44 @@
 
                 <div class="form__item">
                     <h2 class="form__submit-message">Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.</h2>
+                    <div class="grid__wrapper">
+                        <h2>Descubre más de nuestros cursos con estos Testimonios:</h2>
+                        <div class="grid">
+                            <div class="grid__item">
+                                <h3>Curso de Melamina</h3>
+                                <video muted loop class="video__courses">
+                                    <source src="static/videos/melamina.mp4" type="video/mp4">
+                                    Tu navegador no soporta el vídeo.
+                                </video>
+                            </div>
+
+                            <div class="grid__item">
+                                <h3>Curso de Porcelanato Líquido y Resina Epoxy</h3>
+                                <video muted loop class="video__courses">
+                                    <source src="static/videos/porcelanato.mp4" type="video/mp4">
+                                    Tu navegador no soporta el vídeo.
+                                </video>
+                            </div>
+
+                            <div class="grid__item last-item">
+                                <h3>Curso de Drywall</h3>
+                                <video muted loop class="video__courses">
+                                    <source src="static/videos/drywall.mp4" type="video/mp4">
+                                    Tu navegador no soporta el vídeo.
+                                </video>
+                            </div>
+                            <script>
+                                // Selecciona todos los elementos de video
+                                const videos = document.querySelectorAll('.video__courses');
+                                videos.forEach(video => {
+                                    video.addEventListener('mouseenter', () => video.play());
+                                    video.addEventListener('mouseleave', () => video.pause());
+                                });
+                            </script>
+
+                        </div>
+                        <a href="https://www.tiktok.com/@cencaico?_t=ZM-8vHwLMPaq9O&_r=1" class="see-more" target="_blank">Ver más</a>
+                    </div>
                 </div>
             </form>
         </div>

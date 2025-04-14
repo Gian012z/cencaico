@@ -167,7 +167,61 @@ select {
 
 .form__submit-message {
     color: rgba(254, 45, 45, 0.5);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.grid__wrapper {
+    padding: 60px 0;
+    container-type: inline-size;
+    container-name: grid-testimonio;
+}
+
+.grid__wrapper h2 {
+    font-size: 1.3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.grid__item {
+    border-radius: 16px;
+    background-color: rgba(65, 65, 65, 0.2);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d2d2d2;
+    padding: 10px 18px;
+}
+
+video {
+    border-radius: 16px;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #d1122e;
+    outline: none;
+    cursor: pointer;
+}
+
+.see-more {
+    width: 100%;
+    display: block;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background-color: #d1122e;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px 30px;
+    text-align: center;
+    border-radius: 16px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 /* ------------- LANDINGPAGE QUERIES ------------- */
@@ -228,5 +282,66 @@ select {
     button {
         font-size: 1.5rem;
         padding: 1rem 1.8rem;
+    }
+
+    .see-more {
+        font-size: 1.1rem;
+        padding: 20px 40px;
+    }
+
+    .see-more:hover {
+        opacity: 0.8;
+    }
+    
+    .form__submit-message {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .grid__wrapper {
+        padding: 60px 0;
+        container-type: inline-size;
+        container-name: grid-testimonio;
+    }
+    
+    .grid__wrapper h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+    
+    .grid__item {
+        border-radius: 16px;
+        background-color: rgba(65, 65, 65, 0.2);
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #d2d2d2;
+        padding: 10px 18px;
+        text-align: center;
+    }
+
+    .grid__item h3 {
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .last-item {
+        grid-column: span 2;
+        justify-self: center;
+        width: 50%;
+    }
+    
+    video {
+        border-radius: 16px;
+        max-width: 75%;
+        height: auto;
+        border: 2px solid #d1122e;
+        margin: 20px;
     }
 }

@@ -8,20 +8,17 @@ footer {
     color: #fff;
     max-height: 100vh;
     height: auto;
-    width: 100%;
+    max-width: 100%;
     container-type: inline-size;
     container-name: footer;
 }
 
-footer h2 {
-    font-size: 0.4rem;
-    font-weight: 400;
-}
-
 .footer__link  {
+    display: inline-block;
     text-decoration: none;
     color: #fff;
-    padding: 0 6px;
+    padding: 0 2px;
+    font-size: 0.5rem;
 }
 
 footer h3 {
@@ -31,14 +28,14 @@ footer h3 {
 
 .footer__grid {
     display: grid;
-    grid-template-columns: repeat(3, 115px);
+    grid-template-columns: repeat(3, 100px);
     grid-template-rows: 220px 120px;
     align-items: top;
     justify-content: center;
-    padding: 0;
+    padding: 10px;
     margin: 0;
     margin-bottom: 20px;
-    row-gap: 20px;
+    row-gap: 28px;
 }
 
 .footer__grid-item:first-child {
@@ -122,6 +119,7 @@ hr {
         text-decoration: none;
         color: #fff;
         padding: 0 36px;
+        font-size: 0.8rem;
     }
 
     .footer__link:hover  {

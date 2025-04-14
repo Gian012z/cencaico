@@ -14,9 +14,9 @@ app.config.update(
 
 def bd_connection():
     return connect(
-        database='firebird3-engine:cencaico',
+        database='localhost:cencaico',
         user='SYSDBA',
-        password='MyPass123',
+        password='d68b61e5a9742919f2fa',
         charset='UTF8'
         )
 
@@ -80,7 +80,6 @@ def reclamo():
             request.form.get("declaracion")
         ]
 
-        print(data)
         con = bd_connection()
         cur = con.cursor()
         cur.execute(
@@ -251,9 +250,7 @@ def porcelanato_data():
 @app.route('/delete_data/<uuid:id>', methods=['POST'])
 def delete_data(id):
     try:
-        print(id)
         binary_id = id.bytes
-        print(binary_id)
         con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPMELAMINA WHERE ID = ?', (binary_id,))
@@ -265,9 +262,7 @@ def delete_data(id):
 @app.route('/delete_data2/<uuid:id>', methods=['POST'])
 def delete_data2(id):
     try:
-        print(id)
         binary_id = id.bytes
-        print(binary_id)
         con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPDRYWALL WHERE ID = ?', (binary_id,))
@@ -279,9 +274,7 @@ def delete_data2(id):
 @app.route('/delete_data3/<uuid:id>', methods=['POST'])
 def delete_data3(id):
     try:
-        print(id)
         binary_id = id.bytes
-        print(binary_id)
         con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM LPPORCELANATO WHERE ID = ?', (binary_id,))
@@ -293,9 +286,7 @@ def delete_data3(id):
 @app.route('/delete_ldr/<uuid:id>', methods=['POST'])
 def delete_ldr(id):
     try:
-        print(id)
         binary_id = id.bytes
-        print(binary_id)
         con = bd_connection()
         cur = con.cursor()
         cur.execute('DELETE FROM RECLAMACIONES WHERE ID = ?', (binary_id,))

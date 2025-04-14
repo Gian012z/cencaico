@@ -160,46 +160,41 @@ header h2 {
 @container services (min-width: 600px) {
     .services__content {
         width: 100%;
-        height: 160vh;
+        height: auto;
     }
     .services__content p {
-        font-size: 1rem;
-        padding: 30px 20px;
-    }
-
-    .services__content-title {
-        font-size: 1.8rem;
-        margin: 0;
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+        font-size: 1.2rem;
+        padding: 40px 130px 0 130px;
     }
 
     .grid {
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, auto);
         height: auto;
-        padding: 10px 40px;
-        gap: 0px 30px;
+        padding: 30px 160px 50px 160px;
+        gap: 20px 50px;
     }
 
     .grid-item h3 {
-        font-size: 1.2rem;
-        margin-top: 5px;
+        font-size: 1.1rem;
+        margin-top: 8px;
     }
     
     .grid-item p {
         font-size: 1rem;
         margin: 0;
-        padding: 0 20px;
+        padding: 10px 40px;
         text-wrap: pretty;
     }
+
     .btn--grid {
         font-size: 1rem;
+        margin-bottom: 20px;
     }
+
     .services__overlay {
         width: 100%;
-        height: 10vh;
+        height: 7vh;
         background-color: #d1122e;
     }
 }
@@ -274,7 +269,7 @@ header h2 {
 /* ------------- SLIDE QUERIES ------------- */
 @container slider (min-width: 300px) {
     .slide {
-        width: 60%;
-        height: 65vh;
+        width: 55%;
+        height: 50vh;
     }
 }

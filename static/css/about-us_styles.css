@@ -248,10 +248,17 @@ header h2 {
     }
 
     .about-us__grid-2 {
-        padding: 10px 40px;
+        padding: 10px 160px;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         grid-template-rows: auto;
     }
+
+    .last-item {
+        grid-column: span 2;
+        width: 50%;
+        justify-self: center;
+    }
+    
 }
 /* ------------- ABOUT US 2 ENDS ------------- */
