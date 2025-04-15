@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     libtommath1 \
     libicu-dev \
     libncurses6 \
+    libfbclient2 \
     && apt-get clean
 
 # Descarga e instala el cliente Firebird 4.0
@@ -31,4 +32,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
+CMD ["python", "app.py"]
