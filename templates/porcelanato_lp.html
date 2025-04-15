@@ -123,11 +123,24 @@
                                 </video>
                             </div>
                             <script>
-                                // Selecciona todos los elementos de video
                                 const videos = document.querySelectorAll('.video__courses');
+                            
                                 videos.forEach(video => {
-                                    video.addEventListener('mouseenter', () => video.play());
-                                    video.addEventListener('mouseleave', () => video.pause());
+                                    video.muted = true;
+                            
+                                    video.addEventListener('mouseenter', () => {
+                                        video.play();
+                                    });
+                            
+                                    video.addEventListener('mouseleave', () => {
+                                        video.pause();
+                                        video.muted = true;
+                                    });
+                            
+                                    video.addEventListener('click', () => {
+                                        video.muted = false;
+                                        video.play();
+                                    });
                                 });
                             </script>
 

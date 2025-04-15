@@ -14,7 +14,7 @@ app.config.update(
 
 def bd_connection():
     return connect(
-        database='localhost:cencaico',
+        database='database-firebird-1:cencaico',
         user='SYSDBA',
         password='d68b61e5a9742919f2fa',
         charset='UTF8'
@@ -297,4 +297,4 @@ def delete_ldr(id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=False)

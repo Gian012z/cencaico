@@ -95,7 +95,7 @@
                     <button type="submit" onclick="nextStep()" style="display: none;" id="sixth-btn">Enviar y continuar con mi inscripción</button>
                 </div>
 
-                <div class="form__item">
+                <div class="form__item active">
                     <h2 class="form__submit-message">Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.</h2>
                     <div class="grid__wrapper">
                         <h2>Descubre más de nuestros cursos con estos Testimonios:</h2>
@@ -124,13 +124,27 @@
                                 </video>
                             </div>
                             <script>
-                                // Selecciona todos los elementos de video
                                 const videos = document.querySelectorAll('.video__courses');
+                            
                                 videos.forEach(video => {
-                                    video.addEventListener('mouseenter', () => video.play());
-                                    video.addEventListener('mouseleave', () => video.pause());
+                                    video.muted = true;
+                            
+                                    video.addEventListener('mouseenter', () => {
+                                        video.play();
+                                    });
+                            
+                                    video.addEventListener('mouseleave', () => {
+                                        video.pause();
+                                        video.muted = true;
+                                    });
+                            
+                                    video.addEventListener('click', () => {
+                                        video.muted = false;
+                                        video.play();
+                                    });
                                 });
                             </script>
+                            
 
                         </div>
                         <a href="https://www.tiktok.com/@cencaico?_t=ZM-8vHwLMPaq9O&_r=1" class="see-more" target="_blank">Ver más</a>

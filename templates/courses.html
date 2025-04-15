@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     {% include "nav.html" %}
@@ -47,49 +50,92 @@
                         <p>
                             Aprende a diseñar y fabricar muebles de melamina con técnicas profesionales. Desde la elección de materiales hasta el ensamblaje. Nuestro curso te enseñará a crear piezas funcionales y estéticas.
                         </p>
-                        <div class="slide__wrapper">
-                            <div class="slide">
-                                <ul>
-                                    <li>
-                                        <img src="static/images/courses/melamina/img-1.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/melamina/img-2.jpg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/melamina/img-3.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/melamina/img-4.jpeg" alt="">
-                                    </li>
-                                </ul>
+                        <div class="swiper swiper-1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/melamina/img-1.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/melamina/img-2.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/melamina/img-3-small.webp" 
+                                        srcset="static/images/courses/melamina/img-3.jpeg 900w" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/melamina/img-4-small.webp" alt="">
+                                </div>
                             </div>
+                            <div class="swiper-pagination swiper-pagination-1"></div>
+                            <div class="swiper-button-prev swiper-button-prev-1"></div>
+                            <div class="swiper-button-next swiper-button-next-1"></div>
                         </div>
+                        <script>
+                            const swiper1 = new Swiper('.swiper-1', {
+                                // Optional parameters
+                                direction: 'horizontal',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                // If we need pagination
+                                pagination: {
+                                    el: '.swiper-pagination-1',
+                                },
+                                // Navigation arrows
+                                navigation: {
+                                    nextEl: '.swiper-button-next-1',
+                                    prevEl: '.swiper-button-prev-1',
+                                },
+                            });
+                        </script>
                         <a href="/melamina-arequipa" class="btn--grid" target="_blank">Inscribirse aquí</a>
                     </div>
                     <div class="courses__grid-item-2">
-                        <h4>Porcelanato Líquido y Resina Epoxy</h4>
+                        <h4>Porcelanato Líquido con Resina Epoxy</h4>
                         <p>
                             Domina la aplicación de estos materiales innovadores para crear pisos y superficies de alto impacto. Aprende a realizar acabados duraderos, decorativos y altamente resistentes.
                         </p>
-                        <div class="slide__wrapper">
-                            <div class="slide">
-                                <ul>
-                                    <li>
-                                        <img src="static/images/courses/porcelanato/img-1.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/porcelanato/img-2.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/porcelanato/img-3.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/porcelanato/img-4.jpeg" alt="">
-                                    </li>
-                                </ul>
+                        <div class="swiper swiper-2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/porcelanato/img-1.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/porcelanato/img-2.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/porcelanato/img-3.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/porcelanato/img-4.jpeg" alt="">
+                                </div>
                             </div>
+                            <div class="swiper-pagination swiper-pagination-2"></div>
+                            <div class="swiper-button-prev swiper-button-prev-2"></div>
+                            <div class="swiper-button-next swiper-button-next-2"></div>
                         </div>
+                        <script>
+                            const swiper2 = new Swiper('.swiper-2', {
+                                // Optional parameters
+                                direction: 'horizontal',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                // If we need pagination
+                                pagination: {
+                                    el: '.swiper-pagination-2',
+                                },
+                                // Navigation arrows
+                                navigation: {
+                                    nextEl: '.swiper-button-next-2',
+                                    prevEl: '.swiper-button-prev-2',
+                                },
+                            });
+                        </script>
                         <a href="/porcelanato-arequipa" class="btn--grid" target="_blank">Inscribirse aquí</a>
                     </div>
                     <div class="courses__grid-item-2">
@@ -97,49 +143,95 @@
                         <p>
                             Conviértete en un experto en construcción en seco y optimiza espacios con estructuras modernas. Aprende a instalar tabiques, techos falsos y a manejar herramientas especializadas.
                         </p>
-                        <div class="slide__wrapper">
-                            <div class="slide">
-                                <ul>
-                                    <li>
-                                        <img src="static/images/courses/drywall/IMG_6904.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/drywall/IMG_6963.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/drywall/IMG_6966.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/drywall/IMG_6968.jpeg" alt="">
-                                    </li>
-                                </ul>
+                        <div class="swiper swiper-3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/drywall/img-1.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/drywall/img-2.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/drywall/img-3-small.webp" 
+                                        srcset="static/images/courses/drywall/img-3.jpeg 900w" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/drywall/img-4.jpeg" alt="">
+                                </div>
                             </div>
+                            <div class="swiper-pagination swiper-pagination-3"></div>
+                            <div class="swiper-button-prev swiper-button-prev-3"></div>
+                            <div class="swiper-button-next swiper-button-next-3"></div>
                         </div>
+                        <script>
+                            const swiper3 = new Swiper('.swiper-3', {
+                                // Optional parameters
+                                direction: 'horizontal',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                // If we need pagination
+                                pagination: {
+                                    el: '.swiper-pagination-3',
+                                },
+                                // Navigation arrows
+                                navigation: {
+                                    nextEl: '.swiper-button-next-3',
+                                    prevEl: '.swiper-button-prev-3',
+                                },
+                            });
+                        </script>
                         <a href="/drywall-arequipa" class="btn--grid" target="_blank">Inscribirse aquí</a>
                     </div>
                     <div class="courses__grid-item-2">
                         <h4>Pinturas Decorativas</h4>
                         <p>
-                            Descubre el arte sobre todos los acabados: Estuvo veneciano, Finocemento, Microcemento, Granallado, Texturas, entre otros.
+                            Descubre el arte sobre todos los acabados: Estuco veneciano, Finocemento, Microcemento, Granallado, Texturas, entre otros.
                         </p>
-                        <div class="slide__wrapper">
-                            <div class="slide">
-                                <ul>
-                                    <li>
-                                        <img src="static/images/courses/estuco/img-1.jpg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/estuco/img-2.jpeg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/estuco/img-3.jpg" alt="">
-                                    </li>
-                                    <li>
-                                        <img src="static/images/courses/estuco/img-4.jpg" alt="">
-                                    </li>
-                                </ul>
+                        <div class="swiper swiper-4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/estuco/img-1-small.webp" 
+                                        srcset="static/images/courses/estuco/img-1.jpg 900w" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/estuco/img-2.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/estuco/img-3-small.webp" 
+                                        srcset="static/images/courses/estuco/img-3.jpg 900w" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="static/images/courses/estuco/img-4-small.webp" 
+                                        srcset="static/images/courses/estuco/img-4.jpg 900w" alt="">
+                                </div>
                             </div>
+                            <div class="swiper-pagination swiper-pagination-4"></div>
+                            <div class="swiper-button-prev swiper-button-prev-4"></div>
+                            <div class="swiper-button-next swiper-button-next-4"></div>
                         </div>
+                        <script>
+                            const swiper4 = new Swiper('.swiper-4', {
+                                // Optional parameters
+                                direction: 'horizontal',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                // If we need pagination
+                                pagination: {
+                                    el: '.swiper-pagination-4',
+                                },
+                                // Navigation arrows
+                                navigation: {
+                                    nextEl: '.swiper-button-next-4',
+                                    prevEl: '.swiper-button-prev-4',
+                                },
+                            });
+                        </script>
                         <a href="" class="btn--grid" target="_blank">Inscribirse aquí</a>
                     </div>
                     

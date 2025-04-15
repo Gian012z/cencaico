@@ -299,80 +299,37 @@ header h2 {
 /* ------------- COURSES 2 ENDS ------------- */
 
 /* ------------- SLIDE SECTION ------------- */
-.slide__wrapper {
+.swiper-wrapper {
     container-type: inline-size;
     container-name: slider;
 }
 
-.slide {
-    width: 100%;
-    height: 50vh;
-    min-height: 200px;
+.swiper {
     margin: 20px auto 0;
     margin-bottom: 18px;
-    overflow: hidden;
-    border-radius: 16px;
-    border: 2px solid red;
-}
-
-.slide ul {
-    display: flex;
-    padding: 0;
-    width: 400%;
-    animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slide li {
-    width: 100%;
-    list-style: none;
-    position: relative;
-}
-
-.slide img {
-    max-width: 100%;
-    width: auto;
+    width: 235px;
     height: auto;
-    margin: auto;
+    border-radius: 16px;
 }
 
-@keyframes slide {
-    0% {
-        margin-left: 0;
-    }
-    20% {
-        margin-left: 0;
-    }
-    
-    25% {
-        margin-left: -100%;
-    }
-    45% {
-        margin-left: -100%;
-    }
-
-    50% {
-        margin-left: -200%;
-    }
-    70% {
-        margin-left: -200%;
-    }
-    
-    75% {
-        margin-left: -300%;
-    }
-    100% {
-        margin-left: -300%;
-    }
+.swiper-slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
+
+.swiper-button-next, .swiper-button-prev {
+    color: #d1122e !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #d1122e !important;
+}
+
 /* ------------- SLIDE QUERIES ------------- */
-@container slider (min-width: 300px) {
-    .slide {
+@container courses-2 (min-width: 600px) {
+    .swiper {
         width: 75%;
         height: 55vh;
-    }
-
-    .last-slide {
-        width: 80%;
-        height: 58vh;
     }
 }
