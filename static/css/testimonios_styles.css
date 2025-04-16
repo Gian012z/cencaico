@@ -1,0 +1,65 @@
+.video__container {
+    position: relative;
+}
+
+.video__container:hover .video-btn {
+    display: block;
+}
+
+.video__container:hover .volume-slider {
+    display: block;
+}
+
+
+.video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+.volume-slider {
+    display: none;
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: 90px;
+    z-index: 11;
+    cursor: pointer;
+}
+
+/* Ocultar controles con clase */
+.grid__item.hide-controls .video-btn,
+.grid__item.hide-controls .volume-slider {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar controles normalmente */
+.video-btn,
+.volume-slider {
+    transition: opacity 0.3s ease;
+}
+
+
+@container landingpage (min-width: 600px) {
+    .volume-slider {
+        display: none;
+        position: absolute;
+        bottom: 3%;
+        left: 14%;
+        width: 90px;
+        z-index: 11;
+    }
+}
