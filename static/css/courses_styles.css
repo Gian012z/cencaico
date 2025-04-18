@@ -312,10 +312,16 @@ header h2 {
     border-radius: 16px;
 }
 
-.swiper-slide img {
+.swiper-slide {
+    width: 235px !important;
+    height: 460px !important; /* altura fija */
+    border-radius: 16px !important;
+}
+
+.swiper__img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill !important;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -328,6 +334,12 @@ header h2 {
 
 /* ------------- SLIDE QUERIES ------------- */
 @container courses-2 (min-width: 600px) {
+    .swiper-slide {
+        width: 100% !important;
+        height: auto !important; /* altura fija */
+        border-radius: 16px !important;
+    }
+
     .swiper {
         width: 75%;
         height: 55vh;

@@ -6,102 +6,32 @@
             <div class="grid__item">
                 <h3>Curso de Melamina</h3>
                 <div class="video__container">
-                    <video muted loop class="video__courses">
+                    <video muted loop controls class="video__courses">
                         <source src="static/videos/melamina.mp4" type="video/mp4">
                         Tu navegador no soporta el vídeo.
                     </video>
-                    <button type="button" class="video-btn">▶</button>
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"></input>
                 </div>
             </div>
             
             <div class="grid__item">
                 <h3>Curso de Porcelanato Líquido con Resina Epoxy</h3>
                 <div class="video__container">
-                    <video muted loop class="video__courses">
+                    <video muted loop controls class="video__courses">
                         <source src="static/videos/porcelanato.mp4" type="video/mp4">
                         Tu navegador no soporta el vídeo.
                     </video>
-                    <button type="button" class="video-btn">▶</button>
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"></input>
                 </div>
             </div>
 
             <div class="grid__item last-item">
                 <h3>Curso de Drywall</h3>
                 <div class="video__container">
-                    <video muted loop class="video__courses">
+                    <video muted loop controls class="video__courses">
                         <source src="static/videos/drywall.mp4" type="video/mp4">
                         Tu navegador no soporta el vídeo.
                     </video>
-                    <button type="button" class="video-btn">▶</button>
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"></input>
                 </div>
             </div>
-            
-            <script>
-                const containers = document.querySelectorAll('.grid__item');
-            
-                containers.forEach(container => {
-                    const volumeSlider = container.querySelector('.volume-slider');
-                    const video = container.querySelector('.video__courses');
-                    const button = container.querySelector('.video-btn');
-            
-                    let hideTimeout;
-            
-                    video.muted = true;
-            
-                    // Control de volumen
-                    volumeSlider.addEventListener('input', () => {
-                        video.volume = volumeSlider.value;
-                    });
-            
-                    // Reproducir al hacer clic sobre el video
-                    video.addEventListener('click', () => {
-                        video.muted = false;
-                        video.play();
-                    });
-            
-                    // Botón de play/pausa
-                    button.addEventListener('click', (e) => {
-                        e.stopPropagation(); // evita que se active el click del video
-                        e.preventDefault();
-            
-                        video.muted = false;
-                        if (video.paused) {
-                            video.play();
-                            button.textContent = '❚❚'; // ícono de pausa
-                        } else {
-                            video.pause();
-                            button.textContent = '▶'; // ícono de play
-                        }
-                    });
-            
-                    // Mostrar controles y resetear temporizador
-                    const showControls = () => {
-                        container.classList.remove('hide-controls');
-                        clearTimeout(hideTimeout);
-                        hideTimeout = setTimeout(() => {
-                            container.classList.add('hide-controls');
-                        }, 3000); // Oculta después de 3 segundos sin movimiento
-                    };
-            
-                    // Detectar movimiento del mouse
-                    container.addEventListener('mousemove', showControls);
-                    
-                     // Eventos de touch (móvil)
-                    container.addEventListener('touchstart', showControls);
-                    container.addEventListener('touchend', showControls);
-
-                    // Mostrar controles al inicio
-                    showControls();
-                });
-            </script>
-            
-            
-            
-            
-
         </div>
         <a href="https://www.tiktok.com/@cencaico?_t=ZM-8vHwLMPaq9O&_r=1" class="see-more" target="_blank">Ver más</a>
     </div>
