@@ -184,7 +184,7 @@ div, ul, nav, header, footer, a, li, label, body {
 .courses__img-content img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     clip-path: polygon(29% 0, 100% 0, 100% 100%, 34% 100%, 0% 30%);
 }
 
