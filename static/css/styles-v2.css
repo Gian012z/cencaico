@@ -24,18 +24,20 @@ div, ul, nav, header, footer, a, li, label, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: start;
     container-type: inline-size;
     container-name: main;
+    
 }
 
 .main__overlay {
     width: 100%;
     min-height: 50vh;
+    position: relative;
 }
 
 .main__layer {
-    height: 100%;
+    min-height: 50%;
     width: 100%;
     background-color: #0009;
     position: absolute;
@@ -211,7 +213,6 @@ div, ul, nav, header, footer, a, li, label, body {
 /* ------------- COURSES QUERIES ------------- */
 @container courses (min-width: 600px) {
     .courses__container {
-        min-height: 100vh;
         height: auto;
     }
 
@@ -222,6 +223,7 @@ div, ul, nav, header, footer, a, li, label, body {
     .courses__img-content {
         width: 50%;
         height: 600px;
+        max-height: 100%;
         position: relative;
     }
 

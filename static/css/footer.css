@@ -29,7 +29,7 @@ footer h3 {
 .footer__grid {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: 220px 120px;
+    grid-template-rows: 220px 135px;
     align-items: top;
     justify-content: center;
     padding: 10px;
