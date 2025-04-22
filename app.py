@@ -209,6 +209,45 @@ def guardar_datos_porcelanato():
         print("Error al guardar los datos: ", e)
         return 'Error', 200
     
+@app.route('/pinturas-arequipa')
+def pinturas_arequipa():
+    return render_template('pinturas_lp.html')
+
+@app.route('/guardar-pinturas', methods=['POST'])
+def guardar_datos_pinturas():
+    id_str = str(uuid.uuid4()) 
+    id_ = id_str.upper()
+    nombre  = request.form.get('nombre')
+    numero = request.form.get('numero')
+    rubro = request.form.get('rubro')
+    disponibilidad = request.form.get('disponibilidad')
+    inicio_curso = request.form.get('inicio-curso')
+    costos = request.form.get('costos')
+
+    data = [
+        id_,
+        nombre,
+        numero,
+        rubro,
+        disponibilidad,
+        inicio_curso,
+        costos
+    ]
+
+    try:
+        con = bd_connection()
+        cur = con.cursor()
+        cur.execute("""
+        INSERT INTO LPPINTURAS (ID, CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS)
+        VALUES (CHAR_TO_UUID(?), ?, ?, ?, ?, ?, ?);
+        """, data)
+        con.commit()
+        con.close()
+        return '', 200
+    except Exception as e:
+        print("Error al guardar los datos: ", e)
+        return 'Error', 200
+
 @app.route('/ldr_data')
 def ldr_data():
     con = bd_connection()
@@ -247,6 +286,15 @@ def porcelanato_data():
     rows = cur.fetchall()
     return render_template('porcelanato_data.html', rows=rows)
 
+@app.route('/pinturas_data')
+def pinturas_data():
+    con = bd_connection()
+    cur = con.cursor()
+    cur.execute("""SELECT uuid_to_char(ID), CNAME, NUMERO, RUBRO, DISPONIBILIDAD, INICIOCURSO, COSTOS
+    FROM LPPINTURAS""")
+    rows = cur.fetchall()
+    return render_template('pinturas_data.html', rows=rows)
+
 @app.route('/delete_data/<uuid:id>', methods=['POST'])
 def delete_data(id):
     try:
@@ -282,6 +330,18 @@ def delete_data3(id):
         return redirect(url_for('porcelanato_data'))
     except Exception as e:
         return f"Error al eliminar: {e}"
+    
+@app.route('/delete_data4/<uuid:id>', methods=['POST'])
+def delete_data4(id):
+    try:
+        binary_id = id.bytes
+        con = bd_connection()
+        cur = con.cursor()
+        cur.execute('DELETE FROM LPPINTURAS WHERE ID = ?', (binary_id,))
+        con.commit()
+        return redirect(url_for('pinturas_data'))
+    except Exception as e:
+        return f"Error al eliminar: {e}"
 
 @app.route('/delete_ldr/<uuid:id>', methods=['POST'])
 def delete_ldr(id):
@@ -297,4 +357,4 @@ def delete_ldr(id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=8080, debug=False)
