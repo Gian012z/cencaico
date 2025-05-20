@@ -41,9 +41,14 @@ header h2 {
 
 /* ------------- HEADER QUERIES ------------- */
 @container header (min-width: 600px) {
+    header h2 {
+        font-size: 2.1rem;
+    }
+
     header {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) ,url(../images/services/bg_services_header-900.jpeg);
         min-height: 30vh;
-        background-position: center;
+        background-position: top;
     }
 }
 /* ------------- HEADER ENDS ------------- */
@@ -68,8 +73,8 @@ header h2 {
 }
 
 .services__content p {
-    font-size: 0.8rem;
-    padding: 20px;
+    font-size: 0.9rem;
+    padding: 16px 20px;
     margin: 0;
 }
 
@@ -77,73 +82,77 @@ header h2 {
     display: grid;
     height: auto;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto;
+    grid-template-rows: repeat(14, auto);
     justify-content: center;
     text-align: center;
-    padding: 16px 10px;
-    gap: 0;
+    padding: 0 34px 28px 34px;
+    gap: 32px;
 }
 
 .grid-item {
-    background-color: #d1122e;
+    background-color: rgba(65, 65, 65, 0.2);
     border-radius: 16px;
-    margin: 10px;
+    padding: 16px;
     font-size: 0.8rem;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .grid-item:hover {
-    opacity: 0.86;
+    background-color: #d1122e;
+    transform: scale(1.05);
 }
 
-.grid-item:nth-child(3) {
-    background-color: transparent;
-    display: inline;
+.grid-item:hover .btn {
+    background-color: #fff;
+    color: #d1122e;
 }
 
-.grid-item:nth-child(4) {
-    align-self: center;
-    justify-self: center;
-    height: 45%;
-}
 
-.grid-item h3 {
-    font-size: 0.8rem;
+.item__content h3 {
+    font-size: 1.2rem;
     margin: 0;
-    padding: 0;
-    padding: 8px 6px;
+    padding: 18px 0px 28px 0px;
     text-wrap: balance;
 }
 
 .grid-item p {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin: 0;
     padding: 0;
-    padding: 0px 7px;
     text-wrap: pretty;
 }
 
+.grid-item__img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 .btn {
-    background-color: #fff;
-    font-size: 0.6rem;
-    font-weight: 500;
-    color: #d1122e;
-    width: 50%;
+    display: block;
+    justify-self: center;
+    background-color: #d1122e;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #f2f2f2;
+    width: 60%;
     text-decoration: none;
     border-radius: 16px;
-    padding: 10px 10px;
+    padding: 14px 16px;
     margin-top: 18px;
     margin-bottom: 10px;
     transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
 }
 
 .btn:hover {
-    opacity: 0.86;
+    opacity: 0.90;
 }
 
 .services__overlay {
@@ -154,6 +163,10 @@ header h2 {
 
 .services__content-title {
     font-size: 1.2rem;
+}
+
+.item-hidder {
+    display: none !important;
 }
 
 /* ------------- SERVICES QUERIES ------------- */
@@ -171,24 +184,54 @@ header h2 {
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, auto);
         height: auto;
-        padding: 30px 160px 50px 160px;
-        gap: 20px 50px;
+        padding: 30px 100px 50px 100px;
+        gap: 25px;
+    }
+
+    .grid-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .grid-item h3 {
         font-size: 1.1rem;
-        margin-top: 8px;
+        padding-top: 28px;
     }
     
     .grid-item p {
-        font-size: 1rem;
+        font-size: 0.8rem;
         margin: 0;
-        padding: 10px 40px;
-        text-wrap: pretty;
+        padding: 8px 18px;
+        text-wrap: balance;
+        text-align: justify;
+    }
+
+    .grid-item__img {
+        width: 50%;
+        height: 90%;
+    }
+
+    .item__content {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        text-wrap: balance;
+        align-items: center;
+    }
+
+    .item__content h3 {
+        text-wrap: balance;
+        padding: 18px 5px 28px 5px;
     }
 
     .btn--grid {
-        font-size: 1rem;
+        font-size: 0.7rem;
         margin-bottom: 20px;
     }
 
@@ -199,77 +242,3 @@ header h2 {
     }
 }
 /* ------------- SERVICES ENDS ------------- */
-
-/* ------------- SLIDE SECTION ------------- */
-.slide__wrapper {
-    container-type: inline-size;
-    container-name: slider;
-}
-
-.slide {
-    width: 68%;
-    height: 40vh;
-    margin: 20px auto 0;
-    margin-bottom: 18px;
-    overflow: hidden;
-    border-radius: 16px;
-    border: 2px solid #d1122e;
-}
-
-.slide ul {
-    display: flex;
-    padding: 0;
-    width: 400%;
-    animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slide li {
-    width: 100%;
-    height: auto;
-    list-style: none;
-    position: relative;
-}
-
-.slide img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    margin: auto;
-}
-
-@keyframes slide {
-    0% {
-        margin-left: 0;
-    }
-    20% {
-        margin-left: 0;
-    }
-    
-    25% {
-        margin-left: -100%;
-    }
-    45% {
-        margin-left: -100%;
-    }
-
-    50% {
-        margin-left: -200%;
-    }
-    70% {
-        margin-left: -200%;
-    }
-    
-    75% {
-        margin-left: -300%;
-    }
-    100% {
-        margin-left: -300%;
-    }
-}
-/* ------------- SLIDE QUERIES ------------- */
-@container slider (min-width: 300px) {
-    .slide {
-        width: 55%;
-        height: 50vh;
-    }
-}

@@ -2,7 +2,7 @@
 /* ------------- FOOTER SECTION ------------- */
 footer {
     padding: 20px 40px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     text-align: center;
     background: #111;
     color: #fff;
@@ -18,24 +18,25 @@ footer {
     text-decoration: none;
     color: #fff;
     padding: 0 2px;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
 }
 
 footer h3 {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 400;
 }
 
 .footer__grid {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: 220px 135px;
+    grid-template-rows: auto auto;
     align-items: top;
     justify-content: center;
     padding: 10px;
     margin: 0;
     margin-bottom: 20px;
     row-gap: 28px;
+    column-gap: 18px;
 }
 
 .footer__grid-item:first-child {
@@ -49,7 +50,7 @@ footer h3 {
 .footer__grid-item h2 {
     display: block;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     margin: 0;
     margin-bottom: 15px;
@@ -67,7 +68,7 @@ footer h3 {
 
 .footer__grid-item p {
     text-align: left;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     text-wrap: balance;
     padding: 3px 0;
 }
@@ -109,17 +110,12 @@ hr {
     footer hr {
         margin-top: 30px;
     }
-
-    footer h2 {
-        font-size: 0.8rem;
-        font-weight: 400;
-    }
     
     .footer__link  {
         text-decoration: none;
         color: #fff;
         padding: 0 36px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .footer__link:hover  {
@@ -127,24 +123,24 @@ hr {
     }
 
     footer h3 {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin: 0;
-        margin-top: 26px;
+        margin-top: 20px;
     }
 
     .footer__grid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-rows: auto;
     }
 
     .footer__grid-item h2 {
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin-bottom: 0;
     }
 
     .footer__grid-item p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .footer__grid-item-links img {

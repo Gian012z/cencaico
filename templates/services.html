@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     {% include "nav.html" %}
@@ -27,56 +30,172 @@
             <p>
                 Además de nuestros cursos, ofrecemos una variedad de servicios para profesionales y empresas que buscan soluciones especializadas:
             </p>
+
             <div class="grid">
+
                 <div class="grid-item">
-                    <h3>Asesoría personalizada</h3>
-                    <p>
-                        Te guiamos en la aplicación de técnicas aprendidas en nuestros cursos.
-                    </p>
-                    <a href="https://wa.link/et6y8f" class="btn btn--grid" target="_blank">Consulta aquí</a>
+
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-1.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Obras civiles</h3>
+                        <p>
+                            Realizamos obras civiles adaptadas a cada necesidad, cumpliendo con altos estándares de calidad y seguridad. Nuestro equipo técnico garantiza una ejecución eficiente y ordenada. Nos especializamos en estructuras duraderas y funcionales. Brindamos soluciones confiables desde la planificación hasta la entrega final.
+                        </p>
+                        <a href="https://wa.link/et6y8f" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+
+                </div>
+
+                <div class="grid-item item-hidder">
+
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-2.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Conformación de zócalos sanitarios</h3>
+                        <p>
+                            Instalamos zócalos sanitarios curvos, ideales para ambientes que requieren máxima higiene. Este sistema evita la acumulación de suciedad en esquinas, facilitando la limpieza profunda. Son altamente resistentes a la humedad y productos químicos. Es la mejor opción para laboratorios, hospitales e industrias alimentarias.
+                        </p>
+                        <a href="https://wa.link/fgqimt" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
                 </div>
 
                 <div class="grid-item">
-                    <h3>Desarrollo de proyectos</h3>
-                    <p>
-                        Ofrecemos apoyo en la ejecución de proyectos de construcción y diseño.
-                    </p>
-                    <a href="https://wa.link/fgqimt" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-3.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Instalación del sistema poliuretano (autonivelante)</h3>
+                        <p>
+                            Aplicamos sistemas de poliuretano autonivelante que ofrecen gran resistencia al desgaste, productos químicos y cambios de temperatura. Su acabado uniforme y brillante mejora la estética del espacio. Se adapta a industrias alimentarias, farmacéuticas y más. Proporciona una solución duradera, segura y de fácil mantenimiento.
+                        </p>
+                        <a href="https://wa.link/esf5x3" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item item-hidder">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-4.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Instalación del sistema epóxico (autonivelante)</h3>
+                        <p>
+                            Brindamos pisos epóxicos autonivelantes, ideales para ambientes de alta exigencia. Ofrecen una superficie continua, resistente y fácil de limpiar. Su durabilidad y acabado profesional los hacen perfectos para hospitales, almacenes o plantas de producción. Protegen el suelo y mejoran la imagen del lugar.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
                 </div>
 
                 <div class="grid-item">
-                    <h3>Pisos Industriales</h3>
-                    <p>
-                        Elaboramos los pisos industriales para cualquier rubro y según el presupuesto indicado.
-                    </p>
-                    <div class="slide__wrapper">
-                        <div class="slide">
-                            <ul>
-                                <li>
-                                    <img src="static/images/services/img-1.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="static/images/services/img-2.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="static/images/services/img-3.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="static/images/services/img-4.jpg" alt="">
-                                </li>
-                            </ul>
-                        </div>
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-5.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Pinturas: Epóxico, poliuretano, alifático etc. </h3>
+                        <p>
+                            Aplicamos pinturas especializadas para protección de superficies industriales. Estas capas resistentes aumentan la vida útil del espacio y soportan agentes químicos, tránsito intenso y humedad. Elegimos el tipo de pintura según la necesidad del entorno. Además, mejoran la estética y visibilidad de las áreas tratadas.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-6.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Impermeabilización de techos.</h3>
+                        <p>
+                            Evitamos filtraciones, goteras y daños estructurales mediante sistemas de impermeabilización duraderos. Utilizamos productos como mantos asfálticos o recubrimientos especiales según el tipo de techo. Garantizamos una barrera eficaz contra el agua y los rayos UV. Protege tu inversión con soluciones de alto rendimiento.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item item-hidder">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-7.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Pisos conductivos antiestático</h3>
+                        <p>
+                            Instalamos pisos conductivos que dispersan la carga electrostática acumulada en zonas críticas. Son fundamentales en áreas con equipos sensibles como salas de servidores, laboratorios o industrias electrónicas. Cumplen con normativas de seguridad internacional. Previenen descargas peligrosas y protegen tu infraestructura tecnológica.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>    
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-8.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Reducción de juntas</h3>
+                        <p>
+                            Reducimos las juntas en pisos industriales para crear superficies más continuas, limpias y seguras. Esta mejora optimiza la movilidad de maquinaria, facilita el mantenimiento y reduce el desgaste por vibraciones. También mejora la apariencia del espacio. Es ideal para almacenes y plantas de producción intensiva.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-9.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Señalizaciones</h3>
+                        <p>
+                            Diseñamos e implementamos señalización industrial según normativas de seguridad. Facilitamos la organización del espacio con marcas visibles y duraderas. Desde zonas de riesgo hasta rutas de evacuación, ayudamos a prevenir accidentes. Usamos pinturas especializadas que resisten el tránsito y las condiciones del entorno.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-10.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Instalación de mantos asfalticos</h3>
+                        <p>
+                            Colocamos mantos asfálticos para impermeabilizar superficies expuestas como techos, terrazas o losas. Actúan como una barrera eficaz contra la humedad y el calor. Son fáciles de aplicar, duraderos y adaptables a distintas estructuras. Una solución ideal para proteger tus edificaciones de forma práctica y segura.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
                     </div>
                     
-                    <a href="https://wa.link/esf5x3" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                </div>
+
+                <div class="grid-item item-hidder">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-7.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Instalación de fibras de carbono</h3>
+                        <p>
+                            Reforzamos estructuras de concreto con fibra de carbono, un material innovador y altamente resistente. Esta técnica mejora la capacidad estructural sin añadir peso excesivo. Es ideal para reforzar vigas, columnas o muros. Ofrecemos una alternativa moderna para rehabilitación estructural sin demoliciones.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
                 </div>
 
                 <div class="grid-item">
-                    <h3>Consultoría en innovación</h3>
-                    <p>
-                        Te ayudamos a incorporar nuevas tecnologías y tendencias en tus proyectos.
-                    </p>
-                    <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-12.png') }}" alt="">
+                    <div class="item__content">
+                        <h3>Reparación y mantenimiento de pisos industriales</h3>
+                        <p>
+                            Ofrecemos soluciones completas para restaurar pisos industriales desgastados o dañados. Eliminamos imperfecciones, rellenamos juntas y aplicamos nuevos recubrimientos. Prolongamos la vida útil del suelo con materiales de alto rendimiento. Ideal para conservar un entorno limpio, seguro y operativo.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item item-hidder">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-7.png') }}" alt="">
+
+                    <div class="item__content">
+                        <h3>Corte de gruñas (rampas)</h3>
+                        <p>
+                            Realizamos cortes y ajustes de rampas o “gruñas” para mejorar accesos y tránsito de personas o vehículos. Trabajamos con maquinaria de precisión y personal capacitado. Cumplimos estándares técnicos y estéticos. Es una solución útil para adaptar espacios industriales a nuevas necesidades operativas.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img class="grid-item__img" src="{{ url_for('static', filename='images/services/img-14.png') }}" alt="">
+
+                    <div class="item_content">
+                        <h3>Pisos de poliuretano para lozas deportivas</h3>
+                        <p>
+                            Instalamos pisos deportivos de poliuretano, ideales para canchas y áreas recreativas. Ofrecen excelente absorción de impactos, resistencia al desgaste y confort en el juego. Su acabado antideslizante y colores vivos mejoran la experiencia deportiva. Es una opción duradera y segura para todo tipo de deportes.
+                        </p>
+                        <a href="https://wa.link/7dm20b" class="btn btn--grid" target="_blank">Consulta aquí</a>
+                    </div>
                 </div>
             </div>
         </div>
